@@ -168,6 +168,22 @@ export async function getUser(req,res){
 }
 
 
+
+export async function getUsers(req,res){
+
+    try {
+        
+        const users = await UserModel.find();   
+        return res.status(201).send(users);
+
+} catch (error) {
+    
+        return res.status(500).send({ error});
+}
+
+}
+
+
 /** PUT: http://localhost:8080/api/updateuser 
  * @param: {
   "header" : "<token>"

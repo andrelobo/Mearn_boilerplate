@@ -1,8 +1,11 @@
 import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { getUsername } from '../helper/helper'
 
-axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
+
+
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL || 'http://localhost:8080';
 
 
 /** custom hook */
